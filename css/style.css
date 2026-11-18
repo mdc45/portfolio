@@ -466,11 +466,7 @@ body {
 
 .about-section {
     padding: 110px 8%;
-    background: linear-gradient(
-        180deg,
-        #050510,
-        #0b0a20
-    );
+    background: transparent;
 }
 
 .section-heading span {
@@ -555,7 +551,7 @@ body {
 
 .skills-section {
     padding: 110px 8%;
-    background: #080817;
+    background: transparent;
 }
 
 .skills-intro {
@@ -654,7 +650,7 @@ body {
 
 .projects-section {
     padding: 110px 8%;
-    background: #050510;
+    background: transparent;
 }
 
 .projects-grid {
@@ -1493,7 +1489,7 @@ body {
 
 .site-footer {
     padding: 65px 8% 25px;
-    background: rgba(5, 8, 22, 0.95);
+    background: transparent;
     border-top: 1px solid rgba(139, 92, 246, 0.2);
 }
 
@@ -1680,5 +1676,247 @@ body {
 
     .contact-info {
         width: 100%;
+    }
+}
+
+/* =====================================
+   MDC - FUTURISTIC HOVER EFFECTS
+===================================== */
+
+/* Project cards */
+.project-card {
+    transition: transform 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(103, 232, 249, 0.65);
+    box-shadow: 0 15px 40px rgba(103, 232, 249, 0.12);
+}
+
+/* Project visuals */
+.project-visual {
+    overflow: hidden;
+}
+
+.project-card:hover .project-symbol {
+    transform: scale(1.12);
+    text-shadow: 0 0 25px #67e8f9;
+}
+
+.project-symbol {
+    transition: transform 0.4s ease,
+                text-shadow 0.4s ease;
+}
+
+/* Skills and experience */
+.skill-card,
+.experience-card {
+    transition: transform 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+}
+
+.skill-card:hover,
+.experience-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(167, 139, 250, 0.7);
+    box-shadow: 0 12px 35px rgba(139, 92, 246, 0.15);
+}
+
+/* Beyond engineering */
+.beyond-card {
+    transition: transform 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+}
+
+.beyond-card:hover {
+    transform: translateY(-9px);
+    border-color: rgba(103, 232, 249, 0.6);
+    box-shadow: 0 15px 40px rgba(103, 232, 249, 0.12);
+}
+
+/* Contact links */
+.contact-item {
+    transition: transform 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(8px);
+    background: rgba(103, 232, 249, 0.07);
+    border-color: rgba(103, 232, 249, 0.7);
+}
+
+/* Buttons */
+.primary-btn,
+.secondary-btn {
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    transform: translateY(-4px);
+}
+
+/* Footer */
+.footer-links a,
+.footer-social a,
+.back-to-top {
+    transition: color 0.3s ease,
+                transform 0.3s ease;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* =====================================
+   MDC - SCROLL REVEAL ANIMATIONS
+===================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* =====================================
+   MDC - ENGINEERING x QUANTUM x SPACE
+===================================== */
+
+body {
+    background-color: #050816;
+    background-image:
+        radial-gradient(circle at 15% 20%,
+            rgba(103, 232, 249, 0.09), transparent 30%),
+        radial-gradient(circle at 85% 35%,
+            rgba(139, 92, 246, 0.12), transparent 35%),
+        radial-gradient(circle at 50% 85%,
+            rgba(59, 130, 246, 0.08), transparent 35%),
+        linear-gradient(rgba(103, 232, 249, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(103, 232, 249, 0.025) 1px, transparent 1px);
+    background-size:
+        auto,
+        auto,
+        auto,
+        55px 55px,
+        55px 55px;
+    background-attachment: fixed;
+}
+
+/* Floating cosmic glow */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 20% 40%,
+            rgba(34, 211, 238, 0.07), transparent 25%),
+        radial-gradient(circle at 80% 70%,
+            rgba(139, 92, 246, 0.08), transparent 30%);
+    animation: cosmicGlow 12s ease-in-out infinite alternate;
+}
+
+@keyframes cosmicGlow {
+    from {
+        opacity: 0.45;
+        transform: scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none;
+    }
+}
+/* =====================================
+   MDC - COSMIC VISUAL ENVIRONMENT
+===================================== */
+
+body {
+    isolation: isolate;
+}
+
+/* Animated nebula lighting */
+body::before {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(ellipse at 15% 25%,
+            rgba(0, 190, 255, 0.15), transparent 35%),
+        radial-gradient(ellipse at 80% 30%,
+            rgba(140, 60, 255, 0.19), transparent 38%),
+        radial-gradient(ellipse at 50% 85%,
+            rgba(30, 90, 220, 0.13), transparent 40%);
+
+    filter: blur(35px);
+    animation: mdcNebula 22s ease-in-out infinite alternate;
+}
+
+@keyframes mdcNebula {
+    0% {
+        transform: translate3d(-2%, -1%, 0) scale(1);
+    }
+    50% {
+        transform: translate3d(2%, 2%, 0) scale(1.08);
+    }
+    100% {
+        transform: translate3d(-1%, 3%, 0) scale(1.03);
+    }
+}
+
+/* Animated particle canvas */
+#mdc-cosmic-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none;
     }
 }
